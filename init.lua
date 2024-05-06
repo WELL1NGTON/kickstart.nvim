@@ -562,7 +562,7 @@ require('lazy').setup({
         tsserver = {},
         --
 
-        omnisharp = {},
+        -- omnisharp = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -862,6 +862,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   require 'custom.plugins.omnisharp_vim',
+  require 'custom.plugins.lazygit',
   require 'custom.plugins.schemastore_nvim',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
@@ -892,7 +893,14 @@ require('lazy').setup({
   },
 })
 
--- vim.opt.colorcolumn = { 80, 120 }
+vim.opt.colorcolumn = { 80, 120 }
+-- vim.opt.tabstop = 4
+-- vim.opt.shiftwidth = 4
+-- vim.opt.expandtab = false
+-- vim.opt.smartindent = true
+
+-- Detect pythonrc files as Python
+vim.cmd [[autocmd BufNewFile,BufRead pythonrc setfiletype python]]
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
